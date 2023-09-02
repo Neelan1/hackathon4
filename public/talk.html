@@ -8,7 +8,7 @@
 
   <title>Document</title>
 </head>
-<body>
+<body >
   <div class="bg-[url('images/aibackground.png')] bg-fixed w-full h-screen bg-center bg-cover bg-no-repeat px-28 py-5">
 
     <nav class="flex items-center">
@@ -20,15 +20,19 @@
       </ul>
     </nav>
 
-    <section class="place-content-center bg-slate-300 py-16">
+    <div class="">
+      <h1 class="text-white">
+        AI Chat
+    </h1>
+  </div>
+
+    <section class="py-16 bg-slate-50">
       <div class="container mx-auto py-2 flex">
         <div class="w-1/2 flex flex-col justify-center text-center">
 
-          <form action="" onsubmit = "return false">
-            <input type="text" id="userTextBoxInput">  
-          </form>
+          
 
-          <div id ="userTextDisplay">
+          <div id ="userTextDisplay" class="text-white" >
             
           </div>
       
@@ -36,15 +40,23 @@
           
         </div>
 
-        <div id = "responseTextDisplay">
+        <div id = "responseTextDisplay" class="text-white">
             
         </div>
 
       </div>
     </section>
 
-  </div>
+    
+    
+  
 
+
+  <div class="w-1/2 flex flex-col justify-items-center">
+    <form action="" onsubmit = "return false" >
+      <input type="text" id="userTextBoxInput" placeholder="Enter here" class="rounded-3xl ">  
+    </form>
+</div>
 
   <script src="main.js"></script> 
 </body>
