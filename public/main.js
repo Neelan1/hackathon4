@@ -1,9 +1,8 @@
 
 const userTextInput = document.getElementById("userTextBoxInput");
-const responseTextOutput = document.getElementById("responseTextBoxInput");
-
 const userTextDisplay = document.getElementById("userTextDisplay");
-const responseTextDisplay = document.getElementById("userTextDisplay");
+const responseTextDisplay = document.getElementById("responseTextDisplay");
+console.log(responseTextDisplay == null);
 
 let userTextString = document.createElement("p");
 let responseTextString = document.createElement("p");
@@ -16,19 +15,23 @@ let responseTextString = document.createElement("p");
     userTextString.textContent = userTextInput.value;
     //Display input
     if(event.key === "Enter"){
-      console.log(userTextString);
 
       userTextDisplay.appendChild(userTextString);
       
-      getResponse(userTextInput.value);
+      getResponse(userTextString.textContent);
       userTextInput.value = "";
 
     }
   });
+
+
+
+
 function getResponse(input){
-  console.log("SCREW U");
+  //input is the question of user
+  console.log("YOU SAID: " + input);
   responseTextString = document.createElement("p");
-  responseTextString.textContent = "SCREW U";
+  responseTextString.textContent = "YOU SAID: " + input; // this is where u put ai response
   responseTextDisplay.appendChild(responseTextString);
 
 }
