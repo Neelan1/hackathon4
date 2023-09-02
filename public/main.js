@@ -65,7 +65,7 @@ function getResponse(input){
         let msg = response["choices"][0]["message"]["content"];
        
         responseTextString = document.createElement("p");
-        responseTextString.textContent = "YOU SAID: " + msg; // this is where u put ai response
+        responseTextString.textContent = "AI says: " + msg; // this is where u put ai response
         responseTextDisplay.appendChild(responseTextString);
       
         console.log(msg);
