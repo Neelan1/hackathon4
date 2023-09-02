@@ -33,10 +33,6 @@ function getResponse(input){
 
 }
 
-  
-  
-    
-  
 
 
   //Call output function
