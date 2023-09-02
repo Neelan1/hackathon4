@@ -25,9 +25,13 @@ let responseTextString = document.createElement("p");
     }
   });
 
+let msgHistory = [
+  {
+      "role": "system",
+      "content": "You are a helpful high school student that answers questions for users."
+  }]
 
-
-  async function fetchChat(userInput){
+  async function fetchChat(){
     const settings = {
         method: "POST", 
         headers: {
@@ -36,15 +40,9 @@ let responseTextString = document.createElement("p");
         },
         body: JSON.stringify({
             "model": "gpt-3.5-turbo",
-            "messages": [
-                {
-                    "role": "system",
-                    "content": "You are a mean assistant."
-                },
-                {
-                    "role": "user", "content": userInput,
-                }
-            ]
+            "messages": msgHistory
+
+            
         })
     }
     const response = await fetch(`https://api.openai.com/v1/chat/completions`, settings);
@@ -61,9 +59,11 @@ let responseTextString = document.createElement("p");
 function getResponse(input){
   //input is the question of user
   console.log("YOU SAID: " + input);
-  fetchChat(input).then((response) => {
-        let chat = response;
+  msgHistory.push({"role": "user", "content": input})
+  fetchChat().then((response) => {
+
         let msg = response["choices"][0]["message"]["content"];
+       
         responseTextString = document.createElement("p");
         responseTextString.textContent = "YOU SAID: " + msg; // this is where u put ai response
         responseTextDisplay.appendChild(responseTextString);
