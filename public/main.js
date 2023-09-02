@@ -28,7 +28,7 @@ let responseTextString = document.createElement("p");
 let msgHistory = [
   {
       "role": "system",
-      "content": "You are a helpful high school student that answers questions for users."
+      "content": "You are a helpful high school student that answers questions for users using short responses of 1 - 2 sentences."
   }]
 
   async function fetchChat(){
